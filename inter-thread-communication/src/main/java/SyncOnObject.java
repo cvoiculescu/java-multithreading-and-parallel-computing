@@ -1,4 +1,4 @@
-public class App {
+public class SyncOnObject {
 
     public static Integer counter = 0;
 
