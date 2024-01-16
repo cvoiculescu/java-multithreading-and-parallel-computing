@@ -2,6 +2,11 @@ class RunnerThread1 extends Thread {
 
     public void execute() {
         for (int i = 0; i < 10; ++i) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("Runner1: " + i);
         }
     }
@@ -21,6 +26,11 @@ class RunnerThread2 extends Thread {
 
     public void execute() {
         for (int i = 0; i < 10; ++i) {
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("Runner2: " + i);
         }
     }
