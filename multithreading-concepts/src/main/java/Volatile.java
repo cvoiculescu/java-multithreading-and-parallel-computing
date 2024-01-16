@@ -26,7 +26,7 @@ class Worker implements Runnable {
 
 }
 
-public class Main {
+public class Volatile {
     public static void main(String[] args) throws InterruptedException {
         Worker w = new Worker();
         Thread t = new Thread(w);
