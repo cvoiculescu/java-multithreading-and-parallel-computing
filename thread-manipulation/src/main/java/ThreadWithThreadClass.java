@@ -1,4 +1,5 @@
-class RunnerRunnable1 implements Runnable {
+class RunnerThread1 extends Thread {
+
     public void execute() {
         for (int i = 0; i < 10; ++i) {
             System.out.println("Runner1: " + i);
@@ -11,7 +12,13 @@ class RunnerRunnable1 implements Runnable {
     }
 }
 
-class RunnerRunnable2 {
+class RunnerThread2 extends Thread {
+
+    @Override
+    public void run() {
+        execute();
+    }
+
     public void execute() {
         for (int i = 0; i < 10; ++i) {
             System.out.println("Runner2: " + i);
@@ -20,15 +27,11 @@ class RunnerRunnable2 {
 
 }
 
-public class ThreadWithRunnable {
+public class ThreadWithThreadClass {
     public static void main(String[] args) {
-        // Runnable Class
-        Thread t1 = new Thread(new RunnerRunnable1());
-        // Anonymous Runnable
-        Thread t2 = new Thread(() -> (new RunnerRunnable2()).execute());
-        t1.start();
-        t2.start();
+        Thread thread1 = new RunnerThread1();
+        Thread thread2 = new RunnerThread2();
+        thread1.start();
+        thread2.start();
     }
-
-
 }
