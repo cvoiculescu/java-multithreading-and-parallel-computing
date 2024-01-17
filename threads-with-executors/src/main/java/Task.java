@@ -11,7 +11,6 @@ class Task implements Runnable {
         return Thread.currentThread().getId();
     }
 
-    @SuppressWarnings("CallToPrintStackTrace")
     @Override
     public void run() {
         System.out.printf("Task with id %d is in work - thread id: %d%n", id, getThreadId());
@@ -19,7 +18,7 @@ class Task implements Runnable {
         try {
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 }
