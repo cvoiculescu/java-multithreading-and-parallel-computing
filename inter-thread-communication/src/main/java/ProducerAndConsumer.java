@@ -9,6 +9,7 @@ class Processor {
     private final Object lock = new Object();
     private int value = 0;
 
+    @SuppressWarnings({"InfiniteLoopStatement", "BusyWait"})
     public void producer() throws InterruptedException {
         synchronized (lock) {
             while (true) {
@@ -26,6 +27,7 @@ class Processor {
         }
     }
 
+    @SuppressWarnings({"InfiniteLoopStatement", "BusyWait"})
     public void consumer() throws InterruptedException {
         synchronized (lock) {
             while (true) {
