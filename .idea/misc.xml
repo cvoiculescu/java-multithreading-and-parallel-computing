@@ -8,7 +8,16 @@
         <option value="$PROJECT_DIR$/inter-thread-communication/pom.xml" />
         <option value="$PROJECT_DIR$/../multithreading-concepts/pom.xml" />
         <option value="$PROJECT_DIR$/multithreading-concepts/pom.xml" />
+        <option value="$PROJECT_DIR$/threads-with-executors/pom.xml" />
+        <option value="$PROJECT_DIR$/concurent-collections/pom.xml" />
+        <option value="$PROJECT_DIR$/concurrent-collections/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
