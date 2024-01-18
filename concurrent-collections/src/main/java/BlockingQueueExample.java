@@ -1,11 +1,21 @@
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-class FirstWorker implements Runnable {
+public class BlockingQueueExample {
+    public static void main(String[] args) {
+        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
+        BlockingFirstWorker blockingFirstWorker = new BlockingFirstWorker(queue);
+        BlockingSecondWorker secondWorker = new BlockingSecondWorker(queue);
+        new Thread(blockingFirstWorker).start();
+        new Thread(secondWorker).start();
+    }
+}
+
+class BlockingFirstWorker implements Runnable {
 
     private final BlockingQueue<Integer> queue;
 
-    public FirstWorker(BlockingQueue<Integer> queue) {
+    public BlockingFirstWorker(BlockingQueue<Integer> queue) {
         this.queue = queue;
     }
 
@@ -25,11 +35,11 @@ class FirstWorker implements Runnable {
     }
 }
 
-class SecondWorker implements Runnable {
+class BlockingSecondWorker implements Runnable {
 
     private final BlockingQueue<Integer> queue;
 
-    public SecondWorker(BlockingQueue<Integer> queue) {
+    public BlockingSecondWorker(BlockingQueue<Integer> queue) {
         this.queue = queue;
     }
 
@@ -47,12 +57,4 @@ class SecondWorker implements Runnable {
     }
 }
 
-public class BlockingQueueExample {
-    public static void main(String[] args) {
-        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
-        FirstWorker firstWorker = new FirstWorker(queue);
-        SecondWorker secondWorker = new SecondWorker(queue);
-        new Thread(firstWorker).start();
-        new Thread(secondWorker).start();
-    }
-}
+
