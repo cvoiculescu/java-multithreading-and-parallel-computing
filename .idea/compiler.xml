@@ -10,8 +10,9 @@
         <module name="inter-thread-communication" />
         <module name="thread-manipulation" />
         <module name="multithreading-concepts" />
-        <module name="concurent-collections" />
+        <module name="concurrent-collections" />
         <module name="threads-with-executors" />
+        <module name="multithreading-examples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
