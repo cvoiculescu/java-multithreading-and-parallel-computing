@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="inter-thread-communication" />
         <module name="multithreading-concepts" />
-        <module name="concurent-collections" />
+        <module name="thread-parallelization" />
         <module name="thread-manipulation" />
         <module name="concurrent-collections" />
         <module name="threads-with-executors" />

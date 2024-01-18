@@ -12,6 +12,8 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/thread-manipulation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/thread-manipulation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thread-parallelization/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thread-parallelization/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/threads-with-executors/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/threads-with-executors/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../multithreading-concepts/src/main/java" charset="UTF-8" />
