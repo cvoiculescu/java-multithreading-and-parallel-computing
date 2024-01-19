@@ -1,14 +1,14 @@
-package sequential;
+package mergesort.parallel;
 
 import java.util.Arrays;
 
-public class MergeSort {
+public class ParallelMergeSort {
 
-    private int[] nums;
+    private final int[] nums;
     // not in place;
-    private int[] tempArray;
+    private final int[] tempArray;
 
-    public MergeSort(int[] nums) {
+    public ParallelMergeSort(int[] nums) {
         this.nums = nums;
         this.tempArray = new int[nums.length];
     }
@@ -18,7 +18,36 @@ public class MergeSort {
     }
 
     public void sort() {
-        mergeSort(0, nums.length - 1);
+        int threads = Runtime.getRuntime().availableProcessors();
+        parallelMergeSort(0, nums.length - 1,threads);
+    }
+
+    private Thread createThread(int lowIndex, int highIndex, int numOfThreads) {
+        return new Thread() {
+            @Override
+            public void run() {
+                parallelMergeSort(lowIndex, highIndex, numOfThreads / 2);
+            }
+        };
+    }
+
+    private void parallelMergeSort(int low, int high, int numOfThreads) {
+        if (numOfThreads <= 1) {
+            mergeSort(low, high);
+            return;
+        }
+        int middle = (low + high) / 2;
+        Thread leftSort = createThread(low, middle, numOfThreads);
+        Thread rightSort = createThread(middle + 1, high, numOfThreads);
+        leftSort.start();
+        rightSort.start();
+        try {
+            leftSort.join();
+            rightSort.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        merge(low, middle, high);
     }
 
     private void mergeSort(int low, int high) {
