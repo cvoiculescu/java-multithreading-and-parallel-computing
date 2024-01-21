@@ -5,6 +5,6 @@ public class ForkJoinExample {
         System.out.println("CPUs: " + Runtime.getRuntime().availableProcessors());
         ForkJoinPool pool = new ForkJoinPool();
         SimpleRecursiveAction action = new SimpleRecursiveAction(2000);
-        action.invoke();
+        pool.invoke(action);
     }
 }
