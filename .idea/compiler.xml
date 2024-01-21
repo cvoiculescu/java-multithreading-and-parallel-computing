@@ -10,6 +10,7 @@
         <module name="inter-thread-communication" />
         <module name="multithreading-concepts" />
         <module name="thread-parallelization" />
+        <module name="fork-join-framework" />
         <module name="thread-manipulation" />
         <module name="concurrent-collections" />
         <module name="threads-with-executors" />
