@@ -17,6 +17,8 @@ public class FibonacciTask extends RecursiveTask<Long> {
         FibonacciTask n2 = new FibonacciTask(n - 2);
         n1.invoke();
         n2.invoke();
-        return n1.join() + n2.join();
+        // current thread computes the n1
+        // create another thread and insert into the pool just for n2
+        return n1.compute() + n2.join();
     }
 }
