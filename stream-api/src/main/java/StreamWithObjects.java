@@ -40,6 +40,16 @@ public class StreamWithObjects {
                 .distinct()
                 .toList();
         printList(list);
+        // reduce
+        Optional<Integer> reduce = books.stream().map(Book::getNumberOfPages).reduce(Integer::max);
+        reduce.ifPresent(System.out::println);
+        // get the book with the highest number of pages
+        Optional<Book> lBook = books.stream().reduce((b1, b2) -> b1.getNumberOfPages() > b2.getNumberOfPages() ? b1 : b2);
+        lBook.ifPresent(System.out::println);
+        // total number of pages
+        books.stream().map(Book::getNumberOfPages).reduce(Integer::sum).ifPresent(System.out::println);
+        System.out.println(books.stream().mapToInt(Book::getNumberOfPages).sum());
+
     }
 
     private static void printList(List<?> list){
