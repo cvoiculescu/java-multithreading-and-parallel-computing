@@ -12,6 +12,7 @@
         <module name="thread-parallelization" />
         <module name="fork-join-framework" />
         <module name="thread-manipulation" />
+        <module name="stream-api" />
         <module name="concurrent-collections" />
         <module name="threads-with-executors" />
         <module name="multithreading-examples" />
